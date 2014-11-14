@@ -1,88 +1,46 @@
-[ngCordova](http://ngcordova.com/)
-==========
+This is ngCordova wrapper with extended [AdMobPro](https://github.com/floatinghotpot/cordova-admob-pro) and [Facebook Audience Network](https://github.com/floatinghotpot/cordova-plugin-facebookads) support.
 
-### Cordova with AngularJS Goodness [![Travis](http://img.shields.io/travis/driftyco/ng-cordova.svg?style=flat)](https://travis-ci.org/driftyco/ng-cordova) [![Bower](http://img.shields.io/badge/bower-ngCordova-FFCC2F.svg?style=flat)](http://bower.io/search/?q=ngCordova)
-
-
-
-[<img src="http://ionicframework.com/img/ngcordova-context-logo.png" alt="ngCordova Logo" width="210px" height="210px" />](http://ngcordova.com/)
-
-
-ngCordova gives you simple AngularJS wrappers for a massive amount of Cordova plugins. Check out the list below for all of the available plugins, and create an issue for a new request.
-
-Created by the [Ionic Framework](http://ionicframework.com/) team and the community.
-
-- **Website** : [ngCordova.com](http://ngcordova.com/)
-- **Docs** : [ngCordova.com/docs](http://ngcordova.com/docs)
-- **Requirements** : [AngularJS](https://github.com/angular/angular.js),  [Cordova](http://cordova.apache.org/)
-- **Install** : `bower install ngCordova` or [download zip file](https://github.com/driftyco/ng-cordova/archive/master.zip) and use `ng-cordova.js`
-- **Custom build** : [ngcordova.com/build](http://ngcordova.com/build/)
+You can find [original docs](https://github.com/driftyco/ng-cordova/blob/master/README.md) in [ngCordova](https://github.com/driftyco/ng-cordova/) repository.
 
 
 
+##Usage
 
-## Plugins
-- [AdMob](https://github.com/floatinghotpot/cordova-admob-pro)
-- [App Availability](https://github.com/ohh2ahh/AppAvailability)
-- [App Prefences](https://github.com/dferrell/plugins-application-preferences)
-- [Background Geolocation](https://github.com/christocracy/cordova-plugin-background-geolocation)
-- [Barcode Scanner](https://github.com/wildabeast/BarcodeScanner)
-- [Badge](https://github.com/katzer/cordova-plugin-badge)
-- [Battery Status](https://github.com/apache/cordova-plugin-battery-status) *
-- [Bluetooth Serial](https://github.com/don/BluetoothSerial)
-- [Camera](https://github.com/apache/cordova-plugin-camera) *
-- [Clipboard](https://github.com/VersoSolutions/CordovaClipboard)
-- [Console](https://github.com/apache/cordova-plugin-console) *
-- [Contacts](https://github.com/apache/cordova-plugin-contacts) *
-- [Date Picker](https://github.com/VitaliiBlagodir/cordova-plugin-datepicker)
-- [Device Motion](https://github.com/apache/cordova-plugin-device-motion) *
-- [Device Orientation](https://github.com/apache/cordova-plugin-device-orientation) *
-- [Device](https://github.com/apache/cordova-plugin-device) *
-- [Dialogs](https://github.com/apache/cordova-plugin-dialogs) *
-- [Facebook Connect](https://github.com/Wizcorp/phonegap-facebook-plugin)
-- [File](https://github.com/apache/cordova-plugin-file) *
-- [Flashlight](https://github.com/EddyVerbruggen/Flashlight-PhoneGap-Plugin)
-- [Geolocation](https://github.com/apache/cordova-plugin-geolocation) *
-- [Globalization](https://github.com/apache/cordova-plugin-globalization) *
-- [Google Analytics](https://github.com/phonegap-build/GAPlugin)
-- [Keyboard](https://github.com/driftyco/ionic-plugins-keyboard)
-- [Keychain](https://github.com/shazron/KeychainPlugin)
-- [Local Notifications](https://github.com/katzer/cordova-plugin-local-notifications/)
-- [Media Capture](https://github.com/apache/cordova-plugin-media-capture)
-- [Media](https://github.com/apache/cordova-plugin-media) *
-- [Native Audio](https://github.com/SidneyS/cordova-plugin-nativeaudio)
-- [Network Information](https://github.com/apache/cordova-plugin-network-information) *
-- [Oauth](https://github.com/nraboy/ng-cordova-oauth)
-- [Pin Dialog](https://github.com/Paldom/PinDialog)
-- [Printer](https://github.com/katzer/cordova-plugin-printer)
-- [Progress Indicator](https://github.com/pbernasconi/cordova-progressIndicator)
-- [Push Notifications](https://github.com/phonegap-build/PushPlugin)
-- [SMS](https://github.com/aharris88/phonegap-sms-plugin)
-- [Social Sharing](https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin)
-- [Spinner Dialog](https://github.com/Paldom/SpinnerDialog)
-- [Splashscreen](https://github.com/apache/cordova-plugin-splashscreen) *
-- [SQLite](https://github.com/brodysoft/Cordova-SQLitePlugin)
-- [StatusBar](https://github.com/apache/cordova-plugin-statusbar) *
-- [Toast](https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin)
-- [Touchid](https://github.com/leecrossley/cordova-plugin-touchid)
-- [Vibration](https://github.com/apache/cordova-plugin-vibration) *
-- [Zip](https://github.com/MobileChromeApps/zip)
+###AdMobPro
 
-`* official Apache Cordova Plugin`
+- Install Cordova AdMob Pro Plugin
 
-## Authors
+`cordova plugin add com.google.cordova.admob`
 
-#### Max Lynch
+- Implement $cordovaAdMobPro service
 
-- https://twitter.com/maxlynch
-- https://github.com/mlynch
-
-#### Paolo Bernasconi
-
-- https://twitter.com/paolobernasconi
-- https://github.com/pbernasconi
+```
+module.controller('AdMobCtrl', function($scope, $cordovaAdMobPro) {
+    $cordovaAdMobPro.setOptions({
+					adId: 'ca-app-pub-6869992474017983/4806197152',
+					position:8,
+					autoShow:true,
+					isTesting: true
+				});
+});
+```
 
 
-## LICENSE
+###Facebook Audience Network
 
-ngCordova is licensed under the MIT Open Source license. For more information, see the LICENSE file in this repository.
+- Install Cordova Facebook Audience Network Plugin
+
+`cordova plugin add com.rjfun.cordova.facebookads`
+
+- Implement $cordovaAudianceNetwork service
+
+```
+module.controller('AudianceNetworkCtrl', function($scope, $cordovaAudianceNetwork) {
+	$cordovaAudianceNetwork.setOptions({
+                    adId: '577571115610927_876258762408826',
+                    position:8,
+                    autoShow:true,
+					isTesting: true
+                });
+});
+```
