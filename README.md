@@ -1,4 +1,4 @@
-This is ngCordova wrapper with extended [AdMobPro](https://github.com/floatinghotpot/cordova-admob-pro) and [Facebook Audience Network](https://github.com/floatinghotpot/cordova-plugin-facebookads) support.
+ngCordova wrapper with extended [AdMobPro](https://github.com/floatinghotpot/cordova-admob-pro) and [Facebook Audience Network](https://github.com/floatinghotpot/cordova-plugin-facebookads) support.
 
 You can find [original docs](https://github.com/driftyco/ng-cordova/blob/master/README.md) in [ngCordova](https://github.com/driftyco/ng-cordova/) repository.
 
