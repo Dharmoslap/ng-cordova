@@ -8,11 +8,11 @@ You can find [original docs](https://github.com/driftyco/ng-cordova/blob/master/
 
 ###AdMobPro
 
-- Install Cordova AdMob Pro Plugin
+**Install Cordova AdMob Pro Plugin**
 
 `cordova plugin add com.google.cordova.admob`
 
-- Implement $cordovaAdMobPro service
+**Implement $cordovaAdMobPro service**
 
 ```
 module.controller('AdMobCtrl', function($scope, $cordovaAdMobPro) {
@@ -28,11 +28,11 @@ module.controller('AdMobCtrl', function($scope, $cordovaAdMobPro) {
 
 ###Facebook Audience Network
 
-- Install Cordova Facebook Audience Network Plugin
+**Install Cordova Facebook Audience Network Plugin**
 
 `cordova plugin add com.rjfun.cordova.facebookads`
 
-- Implement $cordovaAudianceNetwork service
+**Implement $cordovaAudianceNetwork service**
 
 ```
 module.controller('AudianceNetworkCtrl', function($scope, $cordovaAudianceNetwork) {
